@@ -16,6 +16,8 @@ import { HousingService } from "../housing.service";
           <app-housing-location
             *ngFor="let housingLocation of housingLocationList"
             [housingLocation]="housingLocation"
+            name="jake"
+            otherName="marshall"
           ></app-housing-location>
         </section>
       </form>

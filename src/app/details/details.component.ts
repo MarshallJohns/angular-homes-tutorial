@@ -29,6 +29,10 @@ import { HousingLocation } from "../housing-location";
         <h2 class="section-heading">Apply now to live here</h2>
         <button class="primary">Apply</button>
       </section>
+      <section>
+        <h2 class="section-heading">Count: {{ count }}</h2>
+        <button class="primary" (click)="count = count + 1">Add One</button>
+      </section>
     </article>
   `,
   styleUrls: ["./details.component.css"],
@@ -37,6 +41,7 @@ export class DetailsComponent {
   route: ActivatedRoute = inject(ActivatedRoute);
   housingService = inject(HousingService);
   housingLocation: HousingLocation | undefined;
+  count: number = 0;
   constructor() {
     const housingLocationId = Number(this.route.snapshot.params["id"]);
     this.housingLocation =

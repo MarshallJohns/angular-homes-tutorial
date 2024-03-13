@@ -20,10 +20,14 @@ import { RouterModule } from "@angular/router";
         {{ housingLocation.city }}, {{ housingLocation.state }}
       </p>
       <a [routerLink]="['details', housingLocation.id]">Learn More</a>
+      <p>{{ name }}</p>
+      <p>{{ otherName }}</p>
     </section>
   `,
   styleUrls: ["./housing-location.component.css"],
 })
 export class HousingLocationComponent {
   @Input() housingLocation!: HousingLocation;
+  @Input() name!: string;
+  @Input() otherName!: string;
 }
