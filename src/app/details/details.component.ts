@@ -1,13 +1,14 @@
-import { Component, inject } from "@angular/core";
+import { Component, inject, Input } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { ActivatedRoute } from "@angular/router";
 import { HousingService } from "../housing.service";
 import { HousingLocation } from "../housing-location";
+import { TestComponent } from "../test/test.component";
 
 @Component({
   selector: "app-details",
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TestComponent],
   template: `
     <article>
       <img class="listing-photo" [src]="housingLocation?.photo" />
@@ -30,8 +31,7 @@ import { HousingLocation } from "../housing-location";
         <button class="primary">Apply</button>
       </section>
       <section>
-        <h2 class="section-heading">Count: {{ count }}</h2>
-        <button class="primary" (click)="count = count + 1">Add One</button>
+        <app-test testClass="test"></app-test>
       </section>
     </article>
   `,

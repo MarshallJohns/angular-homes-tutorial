@@ -1,24 +1,20 @@
-import { Component, inject } from "@angular/core";
+import { Component, inject, Input } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { HousingLocationComponent } from "../housing-location/housing-location.component";
 import { HousingLocation } from "../housing-location";
 import { HousingService } from "../housing.service";
+import { TestComponent } from "../test/test.component";
 @Component({
   selector: "app-home",
   standalone: true,
-  imports: [CommonModule, HousingLocationComponent],
+  imports: [CommonModule, HousingLocationComponent, TestComponent],
   template: `
     <section>
       <form>
         <input type="text" placeholder="Filter by city" />
         <button class="primary" type="button">Search</button>
         <section class="results">
-          <app-housing-location
-            *ngFor="let housingLocation of housingLocationList"
-            [housingLocation]="housingLocation"
-            name="jake"
-            otherName="marshall"
-          ></app-housing-location>
+          <app-test testClass="test2"></app-test>
         </section>
       </form>
     </section>
